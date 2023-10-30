@@ -1,0 +1,41 @@
+[Monday 3:17 PM] 島津 康平Command list for the competition（競技に用いるコマンド）
+    
+This is the command we just used in the competition demonstration.
+TOKEN will be contacted prior to the competition.
+Fill in the 〇〇 and use the command.
+Write down the server ip address in the △△.
+
+
+1. Get information about the problem (fill the token)
+curl -o probleminfo.txt http://△△.△△.△△.△△:8080/problem?token=〇〇
+2. Get a list of names of audio files to be retrieved (fill the number of chunks and the token)
+curl -o chunks.txt -XPOST "http://△△.△△.△△.△△:8080/problem/chunks?n=〇〇&token=〇〇
+3. Get audio files (fill the file name and the token)
+curl -o problem1.wav http://△△.△△.△△.△△:8080/problem/chunks/〇〇.wav?token=〇〇
+4. Send the card number to be selected (fill the token and the card number)
+curl -X POST "http://△△.△△.△△.△△:8080/problem?token=〇〇" -H "Content-Type:application/json" -d "{​​​​​​​\"problem_id\" : \"〇〇\",\"answers\" : [\"11\", \"12\", \"14\", \"15\"]}​​​​​​​" "
+
+
+============================================================
+
+
+先ほど競技のデモで使用したコマンドです。
+tokenは競技の前に連絡されます。
+〇〇を埋めて使用してください。
+△△はサーバのIPアドレスを入れてください。
+
+
+1. 問題の情報を取得
+curl -o probleminfo.txt http://△△.△△.△△.△△:8080/problem?token=〇〇
+2. 取得する音声ファイルの名前一覧を取得
+curl -o chunks.txt -XPOST "http://△△.△△.△△.△△:8080/problem/chunks?n=〇〇&token=〇〇
+3. 実際に音声ファイルを取得
+curl -o problem1.wav http://△△.△△.△△.△△:8080/problem/chunks/〇〇.wav?token=〇〇
+4. 選択する札を送信
+curl -X POST "http://△△.△△.△△.△△:8080/problem?token=〇〇" -H "Content-Type:application/json" -d "{​​​​​​​\"problem_id\" : \"〇〇\",\"answers\" : [\"11\", \"12\", \"14\", \"15\"]}​​​​​​​" "
+
+
+
+
+
+(1 liked)<https://teams.microsoft.com/l/message/19:weGCcvyHyx5keNtNfWSy2qHI5Ld6UY2Eh_FyeuVNI9w1@thread.tacv2/1698041825005?tenantId=ceb2991d-5710-405b-9a3b-3dab6a109547&amp;groupId=cfdd3639-8a06-4631-9c43-9eae3f41062d&amp;parentMessageId=1698041825005&amp;teamName=KOSEN-KMITL2023&amp;channelName=General&amp;createdTime=1698041825005&amp;allowXTenantAccess=false
